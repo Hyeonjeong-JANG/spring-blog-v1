@@ -1,4 +1,4 @@
-{{> /layout/header}}
+{{> layout/header}}
 
 <div class="container p-5">
 
@@ -9,10 +9,10 @@
         <div class="card-body">
             <form action="/login" method="post" enctype="application/x-www-form-urlencoded">
                 <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Enter username" name="username">
+                    <input type="text" class="form-control" placeholder="Enter username" name="username" value="ssar">
                 </div>
                 <div class="mb-3">
-                    <input type="password" class="form-control" placeholder="Enter password" name="password">
+                    <input type="password" class="form-control" placeholder="Enter password" name="password" value="1234">
                 </div>
                 <button type="submit" class="btn btn-primary form-control">로그인</button>
             </form>
@@ -20,4 +20,4 @@
     </div>
 </div>
 
-{{> /layout/footer}}
+{{> layout/footer}}

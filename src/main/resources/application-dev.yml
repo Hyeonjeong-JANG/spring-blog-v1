@@ -4,3 +4,33 @@ server:
       charset: utf-8
       force: true
   port: 8080
+
+
+#  h2데이터베이스 연결하기
+spring:
+  # 머스태치 파일에서 세션과 리퀘스트에 접근할 수 있다.
+  mustache:
+    servlet:
+      expose-session-attributes: true
+      expose-request-attributes: true
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:test;MODE=MySQL # 방언설정
+    username: sa
+    password:
+
+  #      콘솔 유알엘 만들기, 웹으로 접근할 수 있게 해줌.
+  h2:
+    console:
+      enabled: true
+
+
+  jpa:
+    hibernate:
+      ddl-auto: create # 스프링 서버 실행될 때 디비를 자동으로 만들겠다. none으로 하면 자동으로 만들어지지 않음. User에 @엔티티를 안 적으면?
+    show-sql: true
+
+    #    콘솔창에 한 줄로 나오면 보기 불편하니까 보기 편하게 바꾸자!!
+    properties:
+      hibernate:
+        format_sql: true
