@@ -4,7 +4,11 @@ server:
       charset: utf-8
       force: true
   port: 8080
-
+  
+#  세션 유지 시간 설정하는 방법
+  reactive:
+    session:
+      timeout: 30m
 
 #  h2데이터베이스 연결하기
 spring:
@@ -19,11 +23,15 @@ spring:
     username: sa
     password:
 
-  #      콘솔 유알엘 만들기, 웹으로 접근할 수 있게 해줌.
+  #      콘솔 유알엘 만들기, 웹으로 접근할 수 있게 해줌. 실전에는 h2 쓰면 안 됨.
   h2:
     console:
       enabled: true
 
+  sql:
+    init:
+      data-locations:
+        - classpath:db/data.sql # 리스트는 -
 
   jpa:
     hibernate:
@@ -34,3 +42,4 @@ spring:
     properties:
       hibernate:
         format_sql: true
+    defer-datasource-initialization: true

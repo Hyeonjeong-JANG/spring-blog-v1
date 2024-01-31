@@ -77,4 +77,15 @@ public class UserRepository { // DAO라고 생각해라.
         return user;
         // 리절트셋: 데이터베이스 쿼리의 실행 결과로 반환되는 결과 집합
     }
+
+    public User findByUsername(String username) {
+        Query query = em.createNativeQuery("select * from user_tb where username=?", User.class);
+        query.setParameter(1, username);
+        try {
+            User user = (User) query.getSingleResult();
+            return user;
+        } catch (Exception e) {
+            return null;
+        }
+    }
 }
