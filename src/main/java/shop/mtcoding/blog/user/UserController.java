@@ -97,6 +97,10 @@ public class UserController {
 
     @GetMapping("/logout")
     public String logout() {
+        session.invalidate(); // 이게 로그아웃임. 세션에서 해당 서랍 자체를 날려버림. 클라이언트는 가지고 있음.
+//        session.removeAttribute("sessionUser"); // 이렇게 하면 세션만 날아감.
+        // 클라이언트가 제이세션아이디를 가지고 있어. 그런데 클라이언트가 쿠키 저장소에서 그걸 버렸어. 그래서 은행원한테 갔어. 제이세션아이디 말해봐. 아 없는데? 그럼 넌 새로운 제이세션아이디를 받아. 세션 저장소 유효기간: 30분.
+        // 우리는 yml파일에
         return "redirect:/";
     }
 }
