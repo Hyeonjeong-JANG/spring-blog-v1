@@ -1,10 +1,11 @@
 package shop.mtcoding.blog.user;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
+
 
 @Repository // 이렇게 하면 아이오씨에 뜬다. 뉴가 된다. 내가 뉴하지 않아도 됨.
 public class UserRepository { // DAO라고 생각해라.
