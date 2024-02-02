@@ -1,17 +1,22 @@
 {{> /layout/header}}
 
 <div class="container p-5">
-
-    <div class="card mb-3">
-        <div class="card-body">
-            <h4 class="card-title mb-3">제목1</h4>
-            <a href="/board/1" class="btn btn-primary">상세보기</a>
+    <!-- 리퀘스트에 있는 것을 들고 옴 -->
+    <!-- 중괄호 안의 값이 불리언이면 이프문인데 컬렉션을 적으면 포문으로 바뀜.-->
+    {{#boardList}}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h4 class="card-title mb-3">{{title}}</h4>
+                <a href="/board/{{id}}" class="btn btn-primary">상세보기</a>
+            </div>
         </div>
-    </div>
+    {{/boardList}}
 
     <ul class="pagination d-flex justify-content-center">
-        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        <!--        href="?page=0" 이렇게만 적는 이유: 내가 현재 있는 위치니까!! 풀경로 적을 필요 없어. -->
+        <li class="page-item {{#first}}disabled{{/first}}"><a class="page-link" href="?page={{prevPage}}
+            ">Previous</a></li>
+        <li class="page-item {{#last}}disabled{{/last}}"><a class="page-link" href="?page={{nextPage}}">Next</a></li>
     </ul>
 </div>
 

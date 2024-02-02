@@ -10,7 +10,6 @@ import javax.persistence.Query;
 public class UserRepository { // DAO라고 생각해라.
     private EntityManager em;
 
-
     @Transactional // 디비에 인서트하는 쿼리는 위험하기 때문에 @Transactional이 붙지 않은 것은 전송이 안 됨. 셀렉트는 이게 없어도 됨.
     public void save(UserRequest.JoinDTO requestDTO) { // 컨트롤러는 세이브만 호출하면 돼. // 의존성 주입 // userRepository.save(requestDTO); 요렇게 불렀음.
         // 내가 인서트 코드를 직접 짬

@@ -23,6 +23,8 @@ public class User {
     private String password;
     private String email;
 
+//    private String hobby; // 취미가 하나면 여기다가 붙이면 된다. 스칼라니까. 그런데 취미가 여러개다? 테이블로 쪼개야 해!!! 취미 테이블이 나와야 해.
+
     @CreationTimestamp
     private LocalDateTime createdAt;
 }
