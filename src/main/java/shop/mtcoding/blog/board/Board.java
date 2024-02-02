@@ -1,13 +1,14 @@
 package shop.mtcoding.blog.board;
 
+import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Data // 여기에는 게터, 세터, 투스트링 있음. @Getter, @Setter, @ToString 이렇게 써도 됨.
-@Entity // 엔티티가 안 적혀 있으면 리플렉션 하지 않아. 적혀있어야 리플렉션 한다. 테이블을 만들어 준다. 파싱도 엔티티가 없으면 되지 않아. 유저레파지토리에       Query query = em.createNativeQuery("select * from user_tb where username=?", User.class);여기의 맨 마지막  User이 부분
+@Entity
+// 엔티티가 안 적혀 있으면 리플렉션 하지 않아. 적혀있어야 리플렉션 한다. 테이블을 만들어 준다. 파싱도 엔티티가 없으면 되지 않아. 유저레파지토리에       Query query = em.createNativeQuery("select * from user_tb where username=?", User.class);여기의 맨 마지막  User이 부분
 @Table(name = "board_tb") // 테이블 이름을 user_tb로 함
 public class Board {
     @Id // 얘가 프라이머리키다.

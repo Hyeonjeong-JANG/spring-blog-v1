@@ -2,18 +2,24 @@
 
 <div class="container p-5">
 
-    <!-- 수정삭제버튼 -->
-    <div class="d-flex justify-content-end">
-        <button class="btn btn-warning me-1">수정</button>
-        <button class="btn btn-danger">삭제</button>
-    </div>
+    {{#owner}}
+        <!-- 수정삭제버튼 -->
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-warning me-1">수정</button>
+            <button class="btn btn-danger">삭제</button>
+        </div>
+    {{/owner}}
 
+    <div class="d-flex justify-content-end mt-2">
+<!-- 반복문이 아니기 때문에 키값까지 같이 적어야 한다. -->
+        <b>작성자</b>: {{board.username}}
+    </div>
     <!-- 게시글내용 -->
     <div>
-        <h2><b>제목자리</b></h2>
+        <h2><b>{{board.title}}</b></h2>
         <hr />
         <div class="m-4 p-2">
-            내용입니다
+            {{board.content}}
         </div>
     </div>
 
